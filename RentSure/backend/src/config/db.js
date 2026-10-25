@@ -13,12 +13,13 @@ async function connectDB() {
     const client = await pool.connect();
     console.log("PostgreSQL connected successfully.");
     client.release();
-    } catch (error) {
-    console.error("PostgreSQL connection failed:", {
+     } catch (error) {
+    console.error("PostgreSQL connection diagnostic:", {
       message: error.message,
       code: error.code,
-      detail: error.detail,
-      severity: error.severity,
+      address: error.address,
+      port: error.port,
+      syscall: error.syscall,
     });
     throw error;
   }
