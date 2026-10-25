@@ -4878,3 +4878,177 @@ a.dashboard-quick-action:hover {
   .dashboard-analytics-bar-column > span { font-size: 8px; }
   .dashboard-analytics-bar-column > small { font-size: 8px; }
 }
+
+
+/* RentSure mobile sidebar button alignment fix */
+@media (max-width: 850px) {
+  .dashboard-topbar {
+    display: grid !important;
+    grid-template-columns: 38px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-items: start;
+    justify-content: stretch;
+    column-gap: 12px;
+    row-gap: 12px;
+  }
+
+  .dashboard-mobile-menu {
+    display: grid !important;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    align-self: start;
+    margin: 0;
+    position: relative;
+    inset: auto;
+    transform: none;
+    z-index: 2;
+  }
+
+  .dashboard-heading {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    align-self: start;
+  }
+
+  .dashboard-topbar-tools {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-topbar {
+    padding-top: 14px;
+    padding-bottom: 16px;
+  }
+
+  .dashboard-mobile-menu {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+
+
+/* RentSure mobile sidebar visibility and hamburger placement */
+@media (max-width: 850px) {
+  .dashboard-page {
+    position: relative;
+    overflow-x: clip;
+  }
+
+  .dashboard-sidebar {
+    position: fixed !important;
+    inset: 0 auto 0 0 !important;
+    width: min(280px, 86vw) !important;
+    max-width: 86vw !important;
+    min-width: 0 !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+    padding: 22px 16px max(20px, env(safe-area-inset-bottom)) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+    background: #fffdf8 !important;
+    opacity: 1 !important;
+    visibility: visible;
+    z-index: 1001 !important;
+    transform: translateX(-105%);
+    transition: transform 220ms ease;
+  }
+
+  .dashboard-sidebar.dashboard-sidebar-open {
+    transform: translateX(0) !important;
+    box-shadow: 18px 0 45px rgb(32 22 55 / 18%) !important;
+  }
+
+  .dashboard-sidebar-backdrop {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 1000 !important;
+    background: rgb(32 22 55 / 42%) !important;
+  }
+
+  .dashboard-sidebar-top {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .dashboard-sidebar .dashboard-brand-word,
+  .dashboard-sidebar .dashboard-sidebar-label,
+  .dashboard-sidebar .dashboard-nav-item > span,
+  .dashboard-sidebar .dashboard-security > div,
+  .dashboard-sidebar .dashboard-logout > span {
+    display: initial !important;
+  }
+
+  .dashboard-sidebar .dashboard-sidebar-label {
+    margin: 30px 11px 14px !important;
+  }
+
+  .dashboard-sidebar .dashboard-nav {
+    display: grid !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .dashboard-sidebar .dashboard-nav-item {
+    width: 100% !important;
+    min-height: 44px !important;
+    justify-content: flex-start !important;
+    margin: 0 !important;
+    padding: 0 12px !important;
+  }
+
+  .dashboard-sidebar .dashboard-sidebar-bottom {
+    width: 100% !important;
+    margin-top: auto;
+    padding-top: 22px;
+  }
+
+  .dashboard-mobile-menu {
+    position: relative !important;
+    display: grid !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    align-self: start !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid #e5c9f2 !important;
+    border-radius: 12px !important;
+    color: #7027a0 !important;
+    background: #fff !important;
+    z-index: 1 !important;
+  }
+
+  .dashboard-topbar {
+    display: grid !important;
+    grid-template-columns: 42px minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    align-items: start !important;
+    justify-content: stretch !important;
+    column-gap: 10px !important;
+    row-gap: 12px !important;
+  }
+
+  .dashboard-heading {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .dashboard-topbar-tools {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
