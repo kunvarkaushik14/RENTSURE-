@@ -6,8 +6,10 @@ import AuthPage from "./AuthPage";
 import DashboardPage from "./DashboardPage";
 import PropertiesPage from "./PropertiesPage";
 import LandlordPropertiesPage from "./LandlordPropertiesPage";
-import Home from "./Home";
 import PropertyDetailsPage from "./PropertyDetailsPage";
+import TenantHomePage from "./TenantHomePage";
+import TenantUploadsPage from "./TenantUploadsPage";
+import Home from "./Home";
 
 export default function App() {
   return (
@@ -16,13 +18,13 @@ export default function App() {
         <Routes>
           {/* Public pages */}
           <Route path="/" element={<Home />} />
+          <Route path="/properties" element={<PropertiesPage />} />
           <Route
             path="/properties/:id"
             element={<PropertyDetailsPage />}
           />
-          <Route path="/properties" element={<PropertiesPage />} />
 
-          {/* Login and registration */}
+          {/* Authentication */}
           <Route
             path="/login"
             element={<AuthPage mode="login" />}
@@ -39,14 +41,28 @@ export default function App() {
               element={<DashboardPage />}
             />
 
-            {/* Landlord property management */}
+            {/* Landlord workspace */}
+            <Route
+              path="/landlord/properties"
+              element={<LandlordPropertiesPage />}
+            />
             <Route
               path="/my-properties"
               element={<LandlordPropertiesPage />}
             />
+
+            {/* Tenant workspace */}
             <Route
-              path="/landlord/properties"
-              element={<LandlordPropertiesPage />}
+              path="/tenant"
+              element={<TenantHomePage />}
+            />
+            <Route
+              path="/tenant/home"
+              element={<TenantHomePage />}
+            />
+            <Route
+              path="/tenant/uploads"
+              element={<TenantUploadsPage />}
             />
           </Route>
 

@@ -1,6 +1,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import TenantHomePage from "./TenantHomePage";
+
 import {
   ArrowRight,
   ArrowUpRight,
@@ -550,7 +552,26 @@ function handleLogout() {
               <span>Saved properties</span>
             </Link>
           )}
-
+{/* Tenant: My Rental Home */}
+{!isLandlord && (
+  <Link
+    to="/tenant"
+    className={`dashboard-nav-item ${
+      pathname === "/tenant" || pathname === "/tenant/home"
+        ? "active"
+        : ""
+    }`}
+    aria-current={
+      pathname === "/tenant" || pathname === "/tenant/home"
+        ? "page"
+        : undefined
+    }
+    onClick={() => setSidebarOpen(false)}
+  >
+    <Home size={18} />
+    <span>My Rental Home</span>
+  </Link>
+)}
           <button
             type="button"
             className={`dashboard-nav-item dashboard-nav-button ${workspaceView === "applications" ? "active" : ""}`}
